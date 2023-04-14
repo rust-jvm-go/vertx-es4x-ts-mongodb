@@ -1,7 +1,11 @@
 /// <reference types="@vertx/core" />
 // @ts-check
 
-vertx
+import {HttpServer} from "@vertx/core";
+
+let x: PromiseLike<HttpServer>
+
+x = vertx
   .createHttpServer()
   .requestHandler(function (req: any) {
     req.response()

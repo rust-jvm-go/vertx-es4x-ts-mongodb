@@ -2,7 +2,7 @@
   "name": "vertx-es4x-ts-mongodb",
   "version": "1.0.0",
   "private": true,
-  "description": "A bare-bones es4x application",
+  "description": "Vert.x ES4X + TypeScript + Reactive MongoDB",
   "type": "commonjs",
   "main": "dist/index.js",
   "keywords": [],
