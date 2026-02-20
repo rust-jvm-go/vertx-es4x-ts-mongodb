@@ -1,13 +1,19 @@
 /// <reference types="@vertx/core" />
 // @ts-check
 
-import { TestSuite, TestContext } from '@vertx/unit';
+import { TestSuite } from '@vertx/unit';
 
 const suite = TestSuite.create("the_test_suite");
 
-suite.test("my_test_case", (should: TestContext) => {
-  let s : string = "value";
-  should.assertEquals("value", s);
+// Basic assertion test
+suite.test("my_test_case", (context: any) => {
+  let s: string = "value";
+  context.assertEquals("value", s);
+});
+
+// Verify vertx instance is available
+suite.test("vertx_instance_available", (context: any) => {
+  context.assertNotNull(vertx);
 });
 
 suite.run();

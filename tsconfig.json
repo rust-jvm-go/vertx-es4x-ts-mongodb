@@ -7,8 +7,9 @@
     "sourceMap": true,
     "noImplicitAny": true,
     "module": "commonjs",
-    "target": "es2018",
+    "target": "es2022",
     "types": [],
-    "allowJs": true
+    "allowJs": true,
+    "skipLibCheck": true
   }
 }

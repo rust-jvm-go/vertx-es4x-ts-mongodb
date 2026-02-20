@@ -8,17 +8,22 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "dependencies": {"@vertx/core": "4.3.8"},
+  "dependencies": {
+    "@vertx/core": "4.5.14",
+    "@vertx/web": "4.5.14",
+    "@vertx/mongo-client": "4.5.14"
+  },
   "devDependencies": {
-    "@es4x/create": "0.19.2",
-    "typescript": "^5.0.4",
-    "@vertx/unit": "4.3.8"
+    "@es4x/create": "0.22.0",
+    "typescript": "^5.8.0",
+    "@vertx/unit": "4.5.14"
   },
   "scripts": {
-    "postinstall": "es4x install",
+    "postinstall": "bash scripts/patch-es4x.sh && es4x install",
     "prestart": "tsc",
     "start": "es4x",
     "pretest": "tsc",
-    "test": "es4x test dist/index.test.js"
+    "test": "es4x test dist/index.test.js",
+    "dev": "es4x run --redeploy=\"dist/**\" --on-redeploy=\"tsc\" dist/index.js"
   }
 }
